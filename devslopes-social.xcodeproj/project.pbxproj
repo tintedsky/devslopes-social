@@ -22,6 +22,7 @@
 		FC52C4931F6A216100D04556 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC52C4911F6A216100D04556 /* FBSDKCoreKit.framework */; };
 		FC52C4941F6A216100D04556 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC52C4921F6A216100D04556 /* FBSDKLoginKit.framework */; };
 		FC6349AF1F6ED8A6009B5BC3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6349AE1F6ED8A6009B5BC3 /* CircleView.swift */; };
+		FC6349B11F6FD72D009B5BC3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6349B01F6FD72D009B5BC3 /* PostCell.swift */; };
 		FC9C0A811F6C63F800D2CD5A /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C0A801F6C63F800D2CD5A /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		FC52C4911F6A216100D04556 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		FC52C4921F6A216100D04556 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		FC6349AE1F6ED8A6009B5BC3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		FC6349B01F6FD72D009B5BC3 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FC9C0A801F6C63F800D2CD5A /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				FC52C48D1F69D84700D04556 /* FancyField.swift */,
 				FC52C48F1F6A12F600D04556 /* FancyBtn.swift */,
 				FC6349AE1F6ED8A6009B5BC3 /* CircleView.swift */,
+				FC6349B01F6FD72D009B5BC3 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				FC52C4871F69D19200D04556 /* FancyView.swift in Sources */,
 				FC52C48A1F69D1BD00D04556 /* Constants.swift in Sources */,
 				FC52C4901F6A12F600D04556 /* FancyBtn.swift in Sources */,
+				FC6349B11F6FD72D009B5BC3 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

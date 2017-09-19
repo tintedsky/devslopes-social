@@ -21,6 +21,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         // Do any additional setup after loading the view.
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            print(snapshot.value!)
+        }
     }
     
     //Number of Sections

@@ -26,7 +26,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshots {
-                    print("SNAP: \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject>{
                        let key = snap.key
                        let post = Post(postKey: key, postData: postDict)
@@ -52,10 +51,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
-        print("JESSHB: \(post.caption)")
         
-        return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-    }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
+            cell.configureCell(post: post)
+            return cell
+            
+        }else{
+            return PostCell()
+        }
+}
     
     @IBAction func signOutTapped(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)

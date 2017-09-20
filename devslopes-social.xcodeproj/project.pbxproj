@@ -24,6 +24,7 @@
 		FC6349AF1F6ED8A6009B5BC3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6349AE1F6ED8A6009B5BC3 /* CircleView.swift */; };
 		FC6349B11F6FD72D009B5BC3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6349B01F6FD72D009B5BC3 /* PostCell.swift */; };
 		FC70C0DD1F716A49003773F6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70C0DC1F716A49003773F6 /* DataService.swift */; };
+		FC70C0DF1F72A2BC003773F6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC70C0DE1F72A2BC003773F6 /* Post.swift */; };
 		FC9C0A811F6C63F800D2CD5A /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9C0A801F6C63F800D2CD5A /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		FC6349AE1F6ED8A6009B5BC3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FC6349B01F6FD72D009B5BC3 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FC70C0DC1F716A49003773F6 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FC70C0DE1F72A2BC003773F6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FC9C0A801F6C63F800D2CD5A /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 		FC52C4851F6845EB00D04556 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FC70C0DE1F72A2BC003773F6 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				FC6349AF1F6ED8A6009B5BC3 /* CircleView.swift in Sources */,
 				FC52C48E1F69D84700D04556 /* FancyField.swift in Sources */,
 				FC52C4721F6833AE00D04556 /* SignInVC.swift in Sources */,
+				FC70C0DF1F72A2BC003773F6 /* Post.swift in Sources */,
 				FC52C48C1F69D55300D04556 /* RoundBtn.swift in Sources */,
 				FC52C4701F6833AE00D04556 /* AppDelegate.swift in Sources */,
 				FC70C0DD1F716A49003773F6 /* DataService.swift in Sources */,

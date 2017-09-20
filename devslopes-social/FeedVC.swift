@@ -32,8 +32,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                        self.posts.append(post)
                     }
                 }
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         })
     }
     

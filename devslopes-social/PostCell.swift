@@ -26,5 +26,11 @@ class PostCell: UITableViewCell {
         self.post = post
         self.caption.text =  post.caption
         self.likesLbl.text = "\(post.likes)"
+        
+        if let url = NSURL(string: post.imageUrl){
+            if let data = NSData(contentsOf: url as URL){
+                postImg.image = UIImage(data: data as Data)
+            }
+        }
     }
 }

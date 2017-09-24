@@ -16,6 +16,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var imageAddIcon: CircleView!
     @IBOutlet weak var captionField: FancyField!
     
+    
     var posts = [Post]()
     var imagePicker:UIImagePickerController!
     static var imageCache:NSCache<NSString, UIImage> = NSCache()
@@ -117,11 +118,30 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 }else{
                     print("JESSHB: Successfully uploaded image to Firebase storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL{
+                        self.postToFirebase(imgUrl: url)
+                    }
                 }
             })
-            
-            
         }
+    }
+    
+    func postToFirebase(imgUrl: String){
+        let post: Dictionary<String, Any> = [
+            "caption" : captionField.text!,
+            "imageUrl" : imgUrl,
+            "likes" : 0
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        //Reset the field
+        captionField.text = ""
+        imageSelected = false
+        imageAddIcon.image = UIImage(named: "add-image")
+        
+        self.tableView.reloadData()
     }
     
     @IBAction func addImageTapped(_ sender: Any) {

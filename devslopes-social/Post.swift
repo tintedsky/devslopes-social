@@ -39,7 +39,7 @@ class Post{
     }
     
     //postData was missing
-    init(postKey:String, postData:Dictionary<String, AnyObject>){
+    init(postKey:String, postData:Dictionary<String, Any>){
         self._postKey = postKey
         
         if let caption = postData["caption"] as? String{

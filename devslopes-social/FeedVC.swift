@@ -21,6 +21,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker:UIImagePickerController!
     static var imageCache:NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+    var firstLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         // Do any additional setup after loading the view.
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+            if self.firstLoad, let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshots {
                     if let postDict = snap.value as? Dictionary<String, AnyObject>{
                        let key = snap.key
@@ -44,6 +45,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 }
             }
             self.tableView.reloadData()
+            self.firstLoad = false
         })
     }
     
@@ -127,14 +129,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func postToFirebase(imgUrl: String){
-        let post: Dictionary<String, Any> = [
+        let postData: Dictionary<String, Any> = [
             "caption" : captionField.text!,
             "imageUrl" : imgUrl,
             "likes" : 0
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-        firebasePost.setValue(post)
+        firebasePost.setValue(postData)
+        self.posts.append(Post(postKey: firebasePost.key, postData:postData))
         
         //Reset the field
         captionField.text = ""

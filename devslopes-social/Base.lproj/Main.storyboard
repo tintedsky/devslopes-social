@@ -282,16 +282,23 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-Zf-y1i">
-                                                            <rect key="frame" x="276" y="291.5" width="59" height="22"/>
+                                                            <rect key="frame" x="208.5" y="291.5" width="126.5" height="22"/>
                                                             <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-n5-Qgu">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="22"/>
+                                                                    <state key="normal" title="Delete"/>
+                                                                    <connections>
+                                                                        <action selector="deleteBtnTapped:" destination="HP7-qF-0mq" eventType="touchUpInside" id="i8q-Qh-cXN"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-R9-2jR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="35.5" height="22"/>
+                                                                    <rect key="frame" x="50" y="0.0" width="35.5" height="22"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                                     <color key="textColor" white="0.0" alpha="0.54000000000000004" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2r-Ur-Fqq">
-                                                                    <rect key="frame" x="40.5" y="0.0" width="18.5" height="22"/>
+                                                                    <rect key="frame" x="90.5" y="0.0" width="36" height="22"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                                     <color key="textColor" white="0.0" alpha="0.87" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -304,8 +311,8 @@
                                                         <constraint firstAttribute="trailing" secondItem="uBe-Zf-y1i" secondAttribute="trailing" constant="8" id="0ku-5R-q88"/>
                                                         <constraint firstAttribute="trailing" secondItem="9zt-Qj-8kU" secondAttribute="trailing" constant="8" id="1HN-wY-PhN"/>
                                                         <constraint firstAttribute="bottom" secondItem="uBe-Zf-y1i" secondAttribute="bottom" constant="8" id="4w3-gb-HQl"/>
+                                                        <constraint firstItem="uBe-Zf-y1i" firstAttribute="leading" secondItem="ysn-qV-yOf" secondAttribute="leading" constant="208.5" id="G3d-Yk-gcM"/>
                                                         <constraint firstItem="9zt-Qj-8kU" firstAttribute="top" secondItem="ysn-qV-yOf" secondAttribute="top" constant="8" id="IZF-qW-ofj"/>
-                                                        <constraint firstItem="uBe-Zf-y1i" firstAttribute="leading" secondItem="ysn-qV-yOf" secondAttribute="leading" constant="276" id="Qc0-3Z-nX7"/>
                                                         <constraint firstItem="9zt-Qj-8kU" firstAttribute="leading" secondItem="ysn-qV-yOf" secondAttribute="leading" constant="8" id="vbV-H8-32L"/>
                                                         <constraint firstItem="uBe-Zf-y1i" firstAttribute="top" secondItem="9zt-Qj-8kU" secondAttribute="bottom" constant="8" id="wtU-fS-z4c"/>
                                                     </constraints>
@@ -321,6 +328,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="6VR-DO-kQb" id="v2T-qb-f3l"/>
+                                            <outlet property="deleteBtn" destination="8j9-n5-Qgu" id="XLE-me-o2p"/>
                                             <outlet property="likeImg" destination="LQC-Ti-Bpz" id="SEd-Gq-cSX"/>
                                             <outlet property="likesLbl" destination="o2r-Ur-Fqq" id="Hb0-ZQ-t2I"/>
                                             <outlet property="postImg" destination="jag-vC-cNo" id="hxY-MS-EjV"/>

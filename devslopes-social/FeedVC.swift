@@ -16,12 +16,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var imageAddIcon: CircleView!
     @IBOutlet weak var captionField: FancyField!
     
-    
     var posts = [Post]()
     var imagePicker:UIImagePickerController!
     static var imageCache:NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
-    var firstLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         // Do any additional setup after loading the view.
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
-            if self.firstLoad, let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+            if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                self.posts.removeAll()
                 for snap in snapshots {
                     if let postDict = snap.value as? Dictionary<String, AnyObject>{
                        let key = snap.key
@@ -45,7 +44,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 }
             }
             self.tableView.reloadData()
-            self.firstLoad = false
         })
     }
     
@@ -132,7 +130,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let postData: Dictionary<String, Any> = [
             "caption" : captionField.text!,
             "imageUrl" : imgUrl,
-            "likes" : 0
+            "likes" : 0,
+            "ownerID" : DataService.ds.REF_USER_CURRENT.key
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()

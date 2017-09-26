@@ -13,6 +13,7 @@ class Post{
     private var _caption:String!
     private var _imageUrl:String!
     private var _likes:Int!
+    private var _ownerID:String? = nil
     private var _postKey: String!
     private var _postRef:DatabaseReference!
     
@@ -28,14 +29,19 @@ class Post{
         return _likes
     }
     
+    var ownerID:String?{
+        return _ownerID
+    }
+    
     var postKey:String{
         return _postKey
     }
     
-    init(caption:String, imageUrl:String, likes:Int) {
+    init(caption:String, imageUrl:String, likes:Int, ownerID: String? = nil) {
         self._caption = caption
         self._imageUrl = imageUrl
         self._likes = likes
+        self._ownerID = ownerID
     }
     
     //postData was missing
@@ -52,6 +58,10 @@ class Post{
         
         if let likes = postData["likes"] as? Int{
             self._likes = likes
+        }
+        
+        if let ownerID = postData["ownerID"] as? String{
+            self._ownerID = ownerID
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)

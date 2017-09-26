@@ -17,6 +17,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     var post: Post!
     var likesRef : DatabaseReference!
@@ -36,6 +37,14 @@ class PostCell: UITableViewCell {
         self.caption.text =  post.caption
         self.likesLbl.text = "\(post.likes)"
         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        
+        if DataService.ds.REF_USER_CURRENT.key == self.post.ownerID {
+            deleteBtn.isHidden = false
+            deleteBtn.isEnabled = true
+        }else{
+            deleteBtn.isHidden = true
+            deleteBtn.isEnabled = false
+        }
         
         if img != nil {
             self.postImg.image = img
@@ -76,5 +85,13 @@ class PostCell: UITableViewCell {
                 self.likesRef.removeValue()
             }
         })
+    }
+    
+    @IBAction func deleteBtnTapped(_ sender: Any) {
+        DataService.ds.REF_POSTS.child(self.post.postKey).removeValue { (error) in
+            if error != nil {
+                print("error: \(error)")
+            }
+        }
     }
 }

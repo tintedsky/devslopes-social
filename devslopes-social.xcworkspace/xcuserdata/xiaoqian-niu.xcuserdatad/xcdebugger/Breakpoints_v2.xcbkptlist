@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "devslopes-social/Post.swift"
+            timestampString = "528062303.016281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init(caption:imageUrl:likes:ownerID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "devslopes_social.Post.init (caption : Swift.String, imageUrl : Swift.String, likes : Swift.Int) -&gt; devslopes_social.Post"
+                  moduleName = "devslopes-social"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiaoqian-niu/iOS_Development/Udemy/devslopes-social/devslopes-social/Post.swift"
+                  timestampString = "528054722.822615"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "devslopes_social.Post.__allocating_init (caption : Swift.String, imageUrl : Swift.String, likes : Swift.Int) -&gt; devslopes_social.Post"
+                  moduleName = "devslopes-social"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xiaoqian-niu/iOS_Development/Udemy/devslopes-social/devslopes-social/Post.swift"
+                  timestampString = "528054722.825762"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
